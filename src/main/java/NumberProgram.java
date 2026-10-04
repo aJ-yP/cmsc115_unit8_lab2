@@ -4,12 +4,11 @@ public class NumberProgram {
      * Returns the largest integer in the given array.
      *
      * @param values an array of integers
-     * @return the maximum integer found in the array
-     * @throws IllegalArgumentException if the array is null or empty
+     * @return the maximum integer found, or Integer.MIN_VALUE if the array is null or empty
      */
     public static int findResult(int[] values) {
         if (values == null || values.length == 0) {
-            throw new IllegalArgumentException("Array must not be null or empty.");
+            return Integer.MIN_VALUE;
         }
 
         int max = values[0];
@@ -25,7 +24,9 @@ public class NumberProgram {
     // Example main method for testing
     public static void main(String[] args) {
         int[] sampleValues = {12, 45, 7, 89, 23, 56};
-        int largest = findResult(sampleValues);
-        System.out.println("The largest integer is: " + largest);
+        System.out.println("The largest integer is: " + findResult(sampleValues));
+
+        int[] emptyArray = {};
+        System.out.println("Result for empty array: " + findResult(emptyArray));
     }
 }

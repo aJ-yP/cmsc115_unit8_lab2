@@ -55,21 +55,36 @@ Commit message:
 ## Iteration 3
 
 Final behavior:
--
+- The program checks if the array is empty. If it is, it safely returns 'Integer.MIN_VALUE'.
+- Otherwise, it scans the entire array to locate and return the maximum integer value present.
 
 What was fixed:
--
+- Removed the code that throws an 'IllegalArgumentException' on an empty or null array.
+- Replaced it with a conditional return statement that supplies 'Integer.MINVALUE', which 
+- satisfies the requirement of the test suite.
 
 What you learned:
--
+- Software specifications define how edge cases must be handled. While throwing an exception
+- is common for invalid arguments, returning a sentinel value like 'Integer.MIN_VALUE' can
+- be an explicit requirement to keep the program running smoothly.
 
 Commit message:
--
+- Iteration 3: final version passing all tests
 
 ---
 
 ## Final Reflection
 
-- How did AI responses change across prompts?
-- How did testing affect your changes?
-- What did version control help you understand?
+How did AI responses change across prompts? 
+- The AI transitioned from a highly generalized guess to targeted algorithmic work as the
+- instructions became explicit. Once contextual constraints regarding edge-case handling were
+- added, it provided a precise, tailored solution.
+How did testing affect your changes?
+- Testing served as the definitive source of truth. it exposed the functional mismatches
+- between generic implementation and the project's true criteria. By running the test after
+- each rewrite, I could see exactly what requirements were unmet, driving the debugging
+- cycle forward.
+What did version control help you understand?
+- Version control clearly documented the evolution of the method. It underscored how software
+- development relies on steady, incremental improvements. Moving methodically from initial
+- guess to functional baseline, and finally to a completely correct, robust implementation.
