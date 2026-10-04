@@ -31,16 +31,24 @@ Commit message:
 ## Iteration 2
 
 What changed:
--
+- The code was updated to search for the maximum value instead of a sum.
+- It initialized 'max' with the first element of the array and iterates through to find
+- the largest value.
+- It throws an 'IllegalArgumentException' if an array is null or empty.
 
 What improved:
--
+- The logic for finding the maximum value is correct, allowing arras with normal, negative,
+- or single numbers to pass.
+- 3 out of 4 tests now pass perfectly.
 
 What still failed and why:
--
+- testEmptyArray(): FAILED
+- The method throws 'IllegalArgumentException' if an array is null or empty.
+- However, the test expects it to return 'Integer.MIN_VALUE' rather than throwing an exception,
+- causing a test crash.
 
 Commit message:
--
+- Iteration 2: largest value implementation
 
 ---
 

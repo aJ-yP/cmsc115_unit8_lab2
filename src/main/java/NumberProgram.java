@@ -1,29 +1,31 @@
 public class NumberProgram {
 
     /**
-     * Calculates the result for the given array of values.
-     * Currently implemented to return the sum of all elements.
+     * Returns the largest integer in the given array.
      *
      * @param values an array of integers
-     * @return the computed integer result
+     * @return the maximum integer found in the array
+     * @throws IllegalArgumentException if the array is null or empty
      */
     public static int findResult(int[] values) {
         if (values == null || values.length == 0) {
-            return 0;
+            throw new IllegalArgumentException("Array must not be null or empty.");
         }
 
-        int result = 0;
-        for (int value : values) {
-            result += value;
+        int max = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] > max) {
+                max = values[i];
+            }
         }
 
-        return result;
+        return max;
     }
 
     // Example main method for testing
     public static void main(String[] args) {
-        int[] sampleValues = {5, 10, 15, 20};
-        int output = findResult(sampleValues);
-        System.out.println("The result is: " + output);
+        int[] sampleValues = {12, 45, 7, 89, 23, 56};
+        int largest = findResult(sampleValues);
+        System.out.println("The largest integer is: " + largest);
     }
 }
